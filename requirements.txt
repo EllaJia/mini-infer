@@ -24,4 +24,5 @@ tornado==6.5.7
 typing_extensions==4.15.0
 tzdata==2026.2
 vine==5.1.0
+watchfiles
 wcwidth==0.8.1
