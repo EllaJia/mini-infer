@@ -4,6 +4,7 @@ venv/
 *.pyc
 dist/
 db.sqlite3
+celerybeat-schedule
 build/
 *.egg-info/
 .DS_Store
