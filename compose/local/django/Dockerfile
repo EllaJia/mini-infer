@@ -9,7 +9,7 @@ RUN apt-get update \
   # psycopg dependencies
   && apt-get install -y libpq-dev \
   # Translations dependencies
-  && apt-get install -y gettext \
+  && apt-get install -y gettext procps telnet\
   # Additional dependencies
   && apt-get install -y git \
   # cleaning up unused files
