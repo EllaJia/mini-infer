@@ -27,8 +27,8 @@ def subscribe(request):
     if request.method == 'POST':
         form = YourForm(request.POST)
         if form.is_valid():
-            task = sample_task.delay(form.cleaned_data['email'])
-            # return the task id so the JS can poll the state
+            task = sample_task.delay(form.cleaned_data['email']) # add the task to the queue
+            # immediately return the task id so the JS can poll the state
             return JsonResponse({
                 'task_id': task.task_id,
             })
@@ -41,7 +41,7 @@ def task_status(request):
     task_id = request.GET.get('task_id')
 
     if task_id:
-        task = AsyncResult(task_id)
+        task = AsyncResult(task_id) # create a task object to query the task state
         state = task.state
 
         if state == 'FAILURE':
